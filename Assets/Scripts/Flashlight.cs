@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class flashlightscript : MonoBehaviour
+public class Flashlight : MonoBehaviour
 {
-    [SerializeField] GameObject FlashLigh;
-    [SerializeField] bool FlashLighequiped;
+    [SerializeField] GameObject FlashLight;
+    [SerializeField] bool FlashLightEquipped;
     // Start is called before the first frame update
     void Start()
     {
-        FlashLigh.gameObject.SetActive(true); 
+        FlashLight.gameObject.SetActive(true); 
     }
 
     // Update is called once per frame

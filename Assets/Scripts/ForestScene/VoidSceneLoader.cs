@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class trigger : MonoBehaviour
+public class VoidSceneLoader : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -17,8 +17,9 @@ public class trigger : MonoBehaviour
     }
     private void OnTriggerEnter(Collider collision)
     {
-        
-            SceneManager.LoadScene("Maze");
-        
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            SceneManager.LoadScene("VoidScene");
+        }
     }
 }

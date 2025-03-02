@@ -24,8 +24,8 @@ public class PrefabBrush : GameObjectBrush
     private static Transform GetObjectInCell(GridLayout grid, Transform parent, Vector3Int position)
     {
         int childCount = parent.childCount;
-        Vector3 min = grid.LocalToWorld(grid.CellToLocalInterpolated((Vector3)position));
-        Vector3 max = grid.LocalToWorld(grid.CellToLocalInterpolated((Vector3)(position + Vector3Int.one)));
+        Vector3 min = grid.LocalToWorld(grid.CellToLocalInterpolated(position));
+        Vector3 max = grid.LocalToWorld(grid.CellToLocalInterpolated((position + Vector3Int.one)));
         Bounds bounds = new Bounds((max + min) * 0.5f, max - min);
 
         for (int i = 0; i < childCount; i++)
