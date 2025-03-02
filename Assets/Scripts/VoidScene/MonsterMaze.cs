@@ -5,15 +5,24 @@ using UnityEngine.AI;
 using System.Linq;
 public class MonsterMaze : MonoBehaviour
 {
+    [SerializeField] Animator anim;
     [SerializeField] NavMeshAgent agent;
     [SerializeField] Transform player;
     [SerializeField] Transform[] WarpPoints;
-   
+    [SerializeField] float Speed;
+    [SerializeField] float RunSpeed;
+
     Transform currentWarpPoint;
     [SerializeField] float minimumTeleportInterval = 10f;
     private float teleportTimer = 0f;
 
     [SerializeField] float minDistanceToTeleport = 5f;
+
+    [SerializeField] float runDuration = 4f;
+    float runTimer = 0;
+    [SerializeField] float runRNGInterval = 7f;
+
+    [Range(0f, 1f)][SerializeField] float runProbability = 0.2f;
 
     public static float GetPathDistance(Vector3 start, Vector3 end)
     {
@@ -39,6 +48,28 @@ public class MonsterMaze : MonoBehaviour
     {
         return WarpPoints.Where(x => GetPathDistance(player.position, x.position) > minDistanceToTeleport).OrderBy(x => GetPathDistance(t.position, x.position)).FirstOrDefault();
     }
+
+    void SetRunning(bool set)
+    {
+        if(set == true)
+        {
+            agent.speed = RunSpeed;
+        }
+        else
+        {
+            agent.speed = Speed;
+        }
+
+        anim.SetBool("running", set);
+    }
+    IEnumerator EnableRun()
+    {
+        SetRunning(true);
+        yield return new WaitForSeconds(runDuration);
+        SetRunning(false);
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -66,14 +97,28 @@ public class MonsterMaze : MonoBehaviour
         }
     }
 
+    void HandleRun()
+    {
+        if(runTimer > runRNGInterval)
+        {
+            float RNG = Random.Range(0f, 1f);
+            if(RNG <= runProbability)
+            {
+                StartCoroutine(EnableRun());
+            }
+            runTimer = 0f;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
         agent.SetDestination(player.position);
         teleportTimer += Time.deltaTime;
-
+        runTimer += Time.deltaTime;
         HandleTeleportation();
-      
+        HandleRun();
+        
        
 
     }
