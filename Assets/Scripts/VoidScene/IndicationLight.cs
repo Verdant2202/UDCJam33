@@ -25,8 +25,9 @@ public class IndicationLight : MonoBehaviour
     {
         transform.LookAt(PlayerCamera.position);
         float dist = Vector3.Distance(PlayerCamera.position, transform.position);
-        float alphaValue = Mathf.Clamp(Mathf.Clamp(dist, minAlphaDist, maxAlphaDist)/maxAlphaDist, 0.4f, 1);
-        lightMaterial.SetColor("_EmissionColor", mainMaterial.GetColor("_EmissionColor") * alphaValue);
+        float alphaValue = Mathf.Clamp(Mathf.Clamp(dist, minAlphaDist, maxAlphaDist)/maxAlphaDist, 0.1f, 1f);
+        Debug.Log(alphaValue);
+        lightMaterial.SetColor("_Color", mainMaterial.GetColor("_Color") * alphaValue);
 
         if(dist < minAlphaDist)
         {
