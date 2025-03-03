@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using System.Linq;
-public class MonsterMaze : MonoBehaviour
+public class MonsterMaze : Monster
 {
-    [SerializeField] Animator anim;
+    [SerializeField] MazeManager mazeManager;
+
     [SerializeField] NavMeshAgent agent;
-    [SerializeField] Transform player;
     [SerializeField] Transform[] WarpPoints;
     [SerializeField] float Speed;
     [SerializeField] float RunSpeed;
@@ -25,6 +25,7 @@ public class MonsterMaze : MonoBehaviour
 
     [Range(0f, 1f)][SerializeField] float runProbability = 0.2f;
 
+  
     public void EnableMonster()
     {
         enabled = true;
@@ -51,7 +52,7 @@ public class MonsterMaze : MonoBehaviour
 
     Transform GetNearestWarpPoint(Transform t)
     {
-        return WarpPoints.Where(x => GetPathDistance(player.position, x.position) > minDistanceToTeleport).OrderBy(x => GetPathDistance(t.position, x.position)).FirstOrDefault();
+        return WarpPoints.Where(x => GetPathDistance(playerTransform.position, x.position) > minDistanceToTeleport).OrderBy(x => GetPathDistance(t.position, x.position)).FirstOrDefault();
     }
 
     void SetRunning(bool set)
@@ -71,9 +72,16 @@ public class MonsterMaze : MonoBehaviour
     {
         SetRunning(true);
         yield return new WaitForSeconds(runDuration);
+        runTimer = 0f;
         SetRunning(false);
     }
 
+    public void MazeJumpscare()
+    {
+        agent.enabled = false;
+        enabled = false;
+        StartCoroutine(Jumpscare());
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -85,17 +93,17 @@ public class MonsterMaze : MonoBehaviour
 
     void HandleTeleportation()
     {
-        if(GetPathDistance(player.position, transform.position) <= minDistanceToTeleport)
+        if(GetPathDistance(playerTransform.position, transform.position) <= minDistanceToTeleport)
         {
             return;
         }
-        Transform closestWarpPoint = GetNearestWarpPoint(player);
+        Transform closestWarpPoint = GetNearestWarpPoint(playerTransform);
         if (closestWarpPoint == null)
         {
             return;
         }
 
-        if (currentWarpPoint != closestWarpPoint && teleportTimer >= minimumTeleportInterval && (GetPathDistance(transform.position, player.position) > GetPathDistance(closestWarpPoint.position, player.position)))
+        if (currentWarpPoint != closestWarpPoint && teleportTimer >= minimumTeleportInterval && (GetPathDistance(transform.position, playerTransform.position) > GetPathDistance(closestWarpPoint.position, playerTransform.position)))
         {
             TeleportToWarpPoint(closestWarpPoint);
             currentWarpPoint = closestWarpPoint;
@@ -121,7 +129,7 @@ public class MonsterMaze : MonoBehaviour
     {
         if(enabled)
         {
-            agent.SetDestination(player.position);
+            agent.SetDestination(playerTransform.position);
             teleportTimer += Time.deltaTime;
             runTimer += Time.deltaTime;
             HandleTeleportation();

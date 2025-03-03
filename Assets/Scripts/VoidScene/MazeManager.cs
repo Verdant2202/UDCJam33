@@ -5,7 +5,7 @@ using UnityEngine;
 public class MazeManager : MonoBehaviour
 {
     [SerializeField] MonsterMaze monsterMaze;
-    
+
     public void StartMazeSegment()
     {
         monsterMaze.EnableMonster();
