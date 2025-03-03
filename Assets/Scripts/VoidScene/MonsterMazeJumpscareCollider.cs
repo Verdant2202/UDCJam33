@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonsterJumpscareCollider : MonoBehaviour
+public class MonsterMazeJumpscareCollider : MonoBehaviour
 {
     [SerializeField] MonsterMaze monsterMaze;
     bool done = false;

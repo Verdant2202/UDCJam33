@@ -678,6 +678,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1887101075}
   screenFade: {fileID: 262142423}
+  scene: 1
 --- !u!4 &1278589059
 Transform:
   m_ObjectHideFlags: 0
