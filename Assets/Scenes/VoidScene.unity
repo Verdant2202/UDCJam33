@@ -4993,12 +4993,6 @@ MonoBehaviour:
   runDuration: 5
   runRNGInterval: 7
   runProbability: 0.15
---- !u!4 &596363562 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4920764858631379231, guid: 1c56836488135234eb5e0ba36ad23766,
-    type: 3}
-  m_PrefabInstance: {fileID: 4920764859177046073}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &602298176
 GameObject:
   m_ObjectHideFlags: 0
@@ -5166,66 +5160,6 @@ Transform:
   m_Father: {fileID: 1856134314}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &994763269
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 994763270}
-  - component: {fileID: 994763271}
-  - component: {fileID: 994763272}
-  m_Layer: 0
-  m_Name: JumpscareCollider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &994763270
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 994763269}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.38}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 596363562}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &994763271
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 994763269}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 1.5488529
-  m_Height: 4.4505095
-  m_Direction: 1
-  m_Center: {x: 0.03211093, y: 1.1363402e-15, z: 0.08391429}
---- !u!114 &994763272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 994763269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d87511cea3c2df649a4388cf3644db6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  monsterMaze: {fileID: 596363561}
 --- !u!1 &1032189700
 GameObject:
   m_ObjectHideFlags: 0
@@ -6042,6 +5976,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 631691432}
     m_Modifications:
+    - target: {fileID: 577336842420369601, guid: 1c56836488135234eb5e0ba36ad23766,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1739583923139906130, guid: 1c56836488135234eb5e0ba36ad23766,
         type: 3}
       propertyPath: m_LocalScale.x

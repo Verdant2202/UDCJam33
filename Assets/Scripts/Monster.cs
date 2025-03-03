@@ -7,7 +7,7 @@ public class Monster : MonoBehaviour
     [SerializeField] protected Transform playerTransform;
     [SerializeField] protected Animator anim;
     [SerializeField] Transform jumpscareCameraHolder;
-    [SerializeField] float cameraJumpscareLerpTime = 0.1f;
+    [SerializeField] float cameraJumpscareLerpTime = 0.05f;
     [SerializeField] float jumpscareDuration = 2f;
     public IEnumerator Jumpscare()
     {

@@ -58,7 +58,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MazeMonsterController
+  m_Name: Monster
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: running
@@ -121,7 +121,7 @@ AnimatorStateMachine:
     m_Position: {x: 324.76306, y: 143.1016, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1654777504006958364}
-    m_Position: {x: 330, y: -30, z: 0}
+    m_Position: {x: 320, y: -30, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 9106517012874564669}
     m_Position: {x: 600, y: -40, z: 0}
