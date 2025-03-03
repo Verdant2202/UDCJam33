@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.5
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.063658744, g: 0.067073785, b: 0.06053935, a: 0.5}
+  m_IndirectSpecularColor: {r: 0.09014189, g: 0.11285706, b: 0.15346143, a: 0.5}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -277,7 +277,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &349265767
 Light:
   m_ObjectHideFlags: 0
@@ -4958,13 +4958,15 @@ MonoBehaviour:
   - {fileID: 962866533}
   - {fileID: 602298177}
   - {fileID: 904543587}
-  Speed: 2
+  - {fileID: 240601040}
+  - {fileID: 1948660043}
+  Speed: 2.5
   RunSpeed: 6
-  minimumTeleportInterval: 10
+  minimumTeleportInterval: 17
   minDistanceToTeleport: 12
   runDuration: 5
-  runRNGInterval: 6.5
-  runProbability: 0.172
+  runRNGInterval: 7
+  runProbability: 0.15
 --- !u!1 &602298176
 GameObject:
   m_ObjectHideFlags: 0
@@ -5192,7 +5194,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1091174429 stripped
 Transform:
@@ -5299,6 +5301,65 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d55777a6ef97dc7488fe00283c40da86, type: 3}
+--- !u!1 &1323641274
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1323641275}
+  - component: {fileID: 1323641276}
+  - component: {fileID: 1323641277}
+  m_Layer: 0
+  m_Name: MazeStartCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1323641275
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323641274}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -40.25, y: 33.3, z: -3.37}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 631691432}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1323641276
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323641274}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 5.763893, z: 6.4051895}
+  m_Center: {x: -0.0000017879427, y: -0.741277, z: -0.03716493}
+--- !u!114 &1323641277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323641274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 463d902d2a452d345a23a1955fe0bdf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mazeManager: {fileID: 1993119343}
 --- !u!1001 &1403923563
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5693,8 +5754,9 @@ Transform:
   - {fileID: 602298177}
   - {fileID: 904543587}
   - {fileID: 240601040}
+  - {fileID: 1948660043}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1891443873
 GameObject:
@@ -5727,6 +5789,82 @@ Transform:
   m_Father: {fileID: 1856134314}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1948660042
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1948660043}
+  m_Layer: 0
+  m_Name: MWP6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1948660043
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948660042}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 59.66, y: 10.1, z: 35.39}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1856134314}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1993119341
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1993119342}
+  - component: {fileID: 1993119343}
+  m_Layer: 0
+  m_Name: MazeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1993119342
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993119341}
+  m_LocalRotation: {x: -1.030705e-16, y: -0.34354055, z: -0.00000004095322, w: 0.93913794}
+  m_LocalPosition: {x: -141.99797, y: 31.162802, z: 4.1544685}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 631691432}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1993119343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993119341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bd06f7a176a5e8468c3879f2bbad01d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monsterMaze: {fileID: 596363561}
 --- !u!1 &1997655952 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4542938284741064932, guid: 2afedd33733dccc489e5c143167ecefb,
@@ -5760,7 +5898,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 631691432}
     m_Modifications:
     - target: {fileID: 1739583923139906130, guid: 1c56836488135234eb5e0ba36ad23766,
         type: 3}
@@ -5780,12 +5918,12 @@ PrefabInstance:
     - target: {fileID: 4920764858631379228, guid: 1c56836488135234eb5e0ba36ad23766,
         type: 3}
       propertyPath: m_Name
-      value: Monster
+      value: MonsterMaze
       objectReference: {fileID: 0}
     - target: {fileID: 4920764858631379231, guid: 1c56836488135234eb5e0ba36ad23766,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4920764858631379231, guid: 1c56836488135234eb5e0ba36ad23766,
         type: 3}
@@ -5805,37 +5943,37 @@ PrefabInstance:
     - target: {fileID: 4920764858631379231, guid: 1c56836488135234eb5e0ba36ad23766,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 105.16
+      value: -20.317894
       objectReference: {fileID: 0}
     - target: {fileID: 4920764858631379231, guid: 1c56836488135234eb5e0ba36ad23766,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.84
+      value: 32.002792
       objectReference: {fileID: 0}
     - target: {fileID: 4920764858631379231, guid: 1c56836488135234eb5e0ba36ad23766,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -64.07
+      value: 23.06352
       objectReference: {fileID: 0}
     - target: {fileID: 4920764858631379231, guid: 1c56836488135234eb5e0ba36ad23766,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.37423745
+      value: 0.032884117
       objectReference: {fileID: 0}
     - target: {fileID: 4920764858631379231, guid: 1c56836488135234eb5e0ba36ad23766,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: -0.000000037977266
       objectReference: {fileID: 0}
     - target: {fileID: 4920764858631379231, guid: 1c56836488135234eb5e0ba36ad23766,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.92733294
+      value: -0.99945915
       objectReference: {fileID: 0}
     - target: {fileID: 4920764858631379231, guid: 1c56836488135234eb5e0ba36ad23766,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.000000015326227
       objectReference: {fileID: 0}
     - target: {fileID: 4920764858631379231, guid: 1c56836488135234eb5e0ba36ad23766,
         type: 3}

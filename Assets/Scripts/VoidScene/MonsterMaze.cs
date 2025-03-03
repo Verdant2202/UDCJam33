@@ -12,6 +12,7 @@ public class MonsterMaze : MonoBehaviour
     [SerializeField] float Speed;
     [SerializeField] float RunSpeed;
 
+    bool enabled = false;
     Transform currentWarpPoint;
     [SerializeField] float minimumTeleportInterval = 10f;
     private float teleportTimer = 0f;
@@ -24,6 +25,10 @@ public class MonsterMaze : MonoBehaviour
 
     [Range(0f, 1f)][SerializeField] float runProbability = 0.2f;
 
+    public void EnableMonster()
+    {
+        enabled = true;
+    }
     public static float GetPathDistance(Vector3 start, Vector3 end)
     {
         NavMeshPath path = new NavMeshPath();
@@ -73,6 +78,7 @@ public class MonsterMaze : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        enabled = false;
         teleportTimer = 0f;
         currentWarpPoint = GetNearestWarpPoint(transform);
     }
@@ -113,13 +119,14 @@ public class MonsterMaze : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        agent.SetDestination(player.position);
-        teleportTimer += Time.deltaTime;
-        runTimer += Time.deltaTime;
-        HandleTeleportation();
-        HandleRun();
-        
-       
+        if(enabled)
+        {
+            agent.SetDestination(player.position);
+            teleportTimer += Time.deltaTime;
+            runTimer += Time.deltaTime;
+            HandleTeleportation();
+            HandleRun();
+        }
 
     }
 }
