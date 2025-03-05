@@ -9,6 +9,8 @@ public class fadebedroom : MonoBehaviour
     public AudioSource audioSource;
     public AudioSource show;
     public Transform monster;
+    public Image blackImage; // Assign in Inspector
+
     void Start()
     {
         StartCoroutine(DisableAfterDelay());
@@ -31,8 +33,15 @@ public class fadebedroom : MonoBehaviour
     }
     IEnumerator DisableAfterDelayee()
     {
-        yield return new WaitForSeconds(4f); // Wait for 2 seconds
+        yield return new WaitForSeconds(4f); // Wait for 4 seconds
         monster.position = new Vector3(0f, 403.161f, 0.495f);
         show.Play();
+        StartCoroutine(DisableAfterDelayeee());
+    }
+    IEnumerator DisableAfterDelayeee()
+    {
+        yield return new WaitForSeconds(5f); // Wait for 5 seconds
+
+        blackImage.enabled = true;
     }
 }
