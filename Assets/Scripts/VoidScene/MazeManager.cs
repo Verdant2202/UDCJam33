@@ -5,6 +5,8 @@ using UnityEngine;
 public class MazeManager : MonoBehaviour
 {
     [SerializeField] MonsterMaze monsterMaze;
+    [SerializeField] SwordPartSO requiredSwordPartSO;
+    [SerializeField] GameObject mazeGameObject;
 
     public void StartMazeSegment()
     {
@@ -14,7 +16,10 @@ public class MazeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(InGameData.swordParts.Contains(requiredSwordPartSO))
+        {
+            mazeGameObject.SetActive(false);
+        }
     }
 
     // Update is called once per frame

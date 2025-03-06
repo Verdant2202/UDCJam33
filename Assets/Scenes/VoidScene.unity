@@ -161,7 +161,7 @@ Transform:
   m_Children:
   - {fileID: 915351841}
   m_Father: {fileID: 631691432}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &159125933
 MonoBehaviour:
@@ -5771,7 +5771,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 631691432}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1323641276
 BoxCollider:
@@ -6133,6 +6133,12 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &1587063021 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4542938283025519770, guid: 2afedd33733dccc489e5c143167ecefb,
+    type: 3}
+  m_PrefabInstance: {fileID: 378027738}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1742225854
 GameObject:
   m_ObjectHideFlags: 0
@@ -6165,7 +6171,7 @@ Transform:
   m_Children:
   - {fileID: 1040452154}
   m_Father: {fileID: 631691432}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1742225856
 BoxCollider:
@@ -6406,13 +6412,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1993119341}
-  m_LocalRotation: {x: -1.030705e-16, y: -0.34354055, z: -0.00000004095322, w: 0.93913794}
-  m_LocalPosition: {x: -142, y: -3.4, z: 4.2}
+  m_LocalRotation: {x: -0, y: -0, z: -3.5408892e-17, w: 1}
+  m_LocalPosition: {x: 0.027824402, y: 1.999989, z: 0.036094666}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 631691432}
-  m_RootOrder: 2
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1993119343
 MonoBehaviour:
@@ -6427,6 +6433,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterMaze: {fileID: 596363561}
+  requiredSwordPartSO: {fileID: 11400000, guid: 39bf49fc107d77c4890f6a967914948d,
+    type: 2}
+  mazeGameObject: {fileID: 1587063021}
 --- !u!1 &1997655952 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4542938284741064932, guid: 2afedd33733dccc489e5c143167ecefb,
@@ -6470,7 +6479,7 @@ PrefabInstance:
     - target: {fileID: 2236176615476530023, guid: 72c67366c573f5a42854c76c964b558d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2236176615476530023, guid: 72c67366c573f5a42854c76c964b558d,
         type: 3}
@@ -6615,7 +6624,7 @@ PrefabInstance:
     - target: {fileID: 4920764858631379231, guid: 1c56836488135234eb5e0ba36ad23766,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4920764858631379231, guid: 1c56836488135234eb5e0ba36ad23766,
         type: 3}
