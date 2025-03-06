@@ -15,3 +15,5 @@ MonoBehaviour:
   ID: 2
   Name: Katana Blade
   Object: {fileID: 5679421581642822430, guid: 7c53db544f50cf947b063104c9a212b2, type: 3}
+  UIObject: {fileID: 5897250086357553357, guid: 8f42e809b447f954191b7843ad751054,
+    type: 3}

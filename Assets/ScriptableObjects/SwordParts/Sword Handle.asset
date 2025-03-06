@@ -15,3 +15,5 @@ MonoBehaviour:
   ID: 1
   Name: Katana Handle
   Object: {fileID: 8408039030497549709, guid: 1b4626472d430704c92e2358b6cb43a5, type: 3}
+  UIObject: {fileID: 5897250086357553357, guid: b24ffbe2eb845544ca9ef772aa991430,
+    type: 3}

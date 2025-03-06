@@ -6,6 +6,13 @@ public class Player : MonoBehaviour
 {
     [SerializeField] FirstPersonController movementController;
     [SerializeField] Transform cameraTransform;
+    [SerializeField]
+    private Interactive currentSelectedInteractive;
+
+    public void CollectSwordPart(SwordPartSO swordPartSO)
+    {
+
+    }
 
     public void GetJumpscared(Transform jumpscareCameraHolder, float lerpTime)
     {
@@ -39,6 +46,29 @@ public class Player : MonoBehaviour
             yield return null;
         }
     }
+
+    void HandleInteractives()
+    {
+        RaycastHit[] raycastHits = Physics.RaycastAll(cameraTransform.position, cameraTransform.forward);
+        currentSelectedInteractive = null;
+        foreach(RaycastHit hit in raycastHits)
+        {
+            if (hit.transform.TryGetComponent(out Interactive hitInteractive))
+            {
+                if (hitInteractive.interactiveEnabled)
+                {
+                    currentSelectedInteractive = hitInteractive;
+                    break;
+                }
+            }
+        }
+
+        if(Input.GetKeyDown(KeyCode.E) && currentSelectedInteractive != null)
+        {
+            currentSelectedInteractive.Interact();
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +78,6 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        HandleInteractives();
     }
 }
