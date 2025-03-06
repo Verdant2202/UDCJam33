@@ -544,6 +544,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &713330068 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9500000, guid: 0479a87a2c748344c8ba828b7e7757ef,
+    type: 3}
+  m_PrefabInstance: {fileID: 1097879304}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &780199043
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -901,6 +907,8 @@ MonoBehaviour:
   show: {fileID: 980915541}
   monster: {fileID: 414912309}
   blackImage: {fileID: 1380010731}
+  monsterAnimator: {fileID: 713330068}
+  monsterAnimationName: BedroomAnimation
 --- !u!82 &980915540
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1007,7 +1015,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e8512d89cd30ac54fabe763aa084c59d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: cc9c6b2a3b338db41b57642ad8a1704a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1184,45 +1192,65 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0479a87a2c748344c8ba828b7e7757ef, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 0479a87a2c748344c8ba828b7e7757ef, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 0479a87a2c748344c8ba828b7e7757ef, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 0479a87a2c748344c8ba828b7e7757ef, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.077
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0479a87a2c748344c8ba828b7e7757ef, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 400.505
+      value: 402.041
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0479a87a2c748344c8ba828b7e7757ef, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.495
+      value: 0.946
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0479a87a2c748344c8ba828b7e7757ef, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.08437357
+      value: -0.05259053
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0479a87a2c748344c8ba828b7e7757ef, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.0003544263
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0479a87a2c748344c8ba828b7e7757ef, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.9964342
+      value: 0.9985935
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0479a87a2c748344c8ba828b7e7757ef, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.006729877
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0479a87a2c748344c8ba828b7e7757ef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -0.772
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0479a87a2c748344c8ba828b7e7757ef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -170.32
+      value: 186.029
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0479a87a2c748344c8ba828b7e7757ef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 0479a87a2c748344c8ba828b7e7757ef, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 0479a87a2c748344c8ba828b7e7757ef, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 6475a39d718bf0c42876da60bd82881f, type: 2}
     - target: {fileID: 13700000, guid: 0479a87a2c748344c8ba828b7e7757ef, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

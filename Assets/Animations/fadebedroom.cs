@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
-public class fadebedroom : MonoBehaviour
+public class FadeBedroom : MonoBehaviour
 {
     public Image imageComponent; // Assign in Inspector
     public Animator animator;
@@ -10,6 +10,8 @@ public class fadebedroom : MonoBehaviour
     public AudioSource show;
     public Transform monster;
     public Image blackImage; // Assign in Inspector
+    [SerializeField] Animator monsterAnimator;
+    [SerializeField] string monsterAnimationName;
 
     void Start()
     {
@@ -18,7 +20,7 @@ public class fadebedroom : MonoBehaviour
 
     IEnumerator DisableAfterDelay()
     {
-        yield return new WaitForSeconds(1f); // Wait for 1 seconds
+        yield return new WaitForSeconds(2f); // Wait for 2 seconds
         imageComponent.enabled = false; // Disable the Image component
         animator.enabled = true;
         
@@ -28,20 +30,21 @@ public class fadebedroom : MonoBehaviour
     {
         yield return new WaitForSeconds(0.15f); // Wait for 0.15 seconds
         audioSource.enabled = true;
-        StartCoroutine(DisableAfterDelayee());
-
     }
-    IEnumerator DisableAfterDelayee()
+
+    public void StartMonsterAnim()
     {
-        yield return new WaitForSeconds(4f); // Wait for 4 seconds
-        monster.position = new Vector3(0f, 403.161f, 0.495f);
+        monsterAnimator.Play(monsterAnimationName);
+    }
+
+    public void EndAnimSequence()
+    {
         show.Play();
-        StartCoroutine(DisableAfterDelayeee());
+        EndAnim();
     }
-    IEnumerator DisableAfterDelayeee()
-    {
-        yield return new WaitForSeconds(5f); // Wait for 5 seconds
 
+    void EndAnim()
+    {
         blackImage.enabled = true;
     }
 }
