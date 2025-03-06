@@ -7,6 +7,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 927765915202157615, guid: a5a8b030c68043447b9d2768e9bcbd25,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1972a025e73013c4caecf31c90931b8b,
+        type: 3}
     - target: {fileID: 927765915698512448, guid: a5a8b030c68043447b9d2768e9bcbd25,
         type: 3}
       propertyPath: m_Pivot.x
@@ -115,7 +121,7 @@ PrefabInstance:
     - target: {fileID: 927765915698512449, guid: a5a8b030c68043447b9d2768e9bcbd25,
         type: 3}
       propertyPath: m_Name
-      value: SwordPartUIObject
+      value: KatanaBladeUI
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5a8b030c68043447b9d2768e9bcbd25, type: 3}
