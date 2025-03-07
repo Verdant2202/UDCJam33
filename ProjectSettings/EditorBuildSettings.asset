@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/VoidScene.unity
     guid: 200aa3ea8d771d0499255ff043d97b9e
+  - enabled: 1
+    path: Assets/Main Menu/Main Menu.unity
+    guid: 0b13259761c66264eb8ffd0ff70ef11d
+  - enabled: 1
+    path: Assets/Main Menu/Credits.unity
+    guid: ae4d83a38fb85c244b4fc9a9242f88fd
   m_configObjects: {}
