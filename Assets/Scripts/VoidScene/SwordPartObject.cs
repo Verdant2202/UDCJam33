@@ -10,7 +10,7 @@ public class SwordPartObject : MonoBehaviour
     {
         swordPartTransform.DOScale(new Vector3(0, 0, 0), 0.5f);
         GameManager.Instance.AddSwordPart(swordPartSO);
-        GameManager.Instance.SceneReload(1.5f);
+        GameManager.Instance.SceneReload(1.5f, 1f);
     }
     // Start is called before the first frame update
     void Start()

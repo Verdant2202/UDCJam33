@@ -39,13 +39,13 @@ public class GameManager : MonoBehaviour
     public void PlayerJumpscare(Transform jumpscareCameraHolder, float moveCameraTime, float jumpscareDuration)
     {
         player.MoveAndDockCamera(jumpscareCameraHolder, moveCameraTime);
-        SceneReload(jumpscareDuration);
+        SceneReload(jumpscareDuration, 1f);
     }
 
-    public async void SceneReload(float waitDuration)
+    public async void SceneReload(float waitDuration, float fadeDuration)
     {
-        StartCoroutine(screenFade.FadeIn(1f, waitDuration));
-        await Task.Delay((int)(waitDuration * 1000) + 1000);
+        StartCoroutine(screenFade.FadeIn(fadeDuration, waitDuration));
+        await Task.Delay((int)(waitDuration * 1000) + (int)(fadeDuration * 1000));
         Loader.Load(scene);
     }
 
