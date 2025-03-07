@@ -10,9 +10,38 @@ public class GameManager : MonoBehaviour
     [SerializeField] ScreenFade screenFade;
     [SerializeField] Loader.Scene scene;
     [SerializeField] Transform swordPartsUIHolder;
+    [SerializeField] ItemSO katanaSO;
+    [SerializeField] GameObject playerKatana;
+    [SerializeField] FinaleManager finaleManager;
+
+    [SerializeField] List<SwordPartSO> requiredSwordPartsForSword;
     private void Awake()
     {
         Instance = this;
+    }
+
+    public void CraftSword()
+    {
+        foreach (SwordPartSO so in requiredSwordPartsForSword)
+        {
+            if (!InGameData.swordParts.Contains(so))
+            {
+                //return;
+            }
+        }
+        foreach (SwordPartSO so in requiredSwordPartsForSword)
+        {
+            InGameData.swordParts.Remove(so);
+        }
+        foreach (Transform child in swordPartsUIHolder)
+        {
+            Destroy(child.gameObject);
+        }
+        playerKatana.SetActive(true);
+        InGameData.AddItem(katanaSO);
+        CreateUI();
+        finaleManager.EnableFinale();
+       
     }
 
     public void CreateUI()

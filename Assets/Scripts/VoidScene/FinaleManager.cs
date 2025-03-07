@@ -13,14 +13,20 @@ public class FinaleManager : MonoBehaviour
     [SerializeField] Player player;
     [SerializeField] Light playerFlashlight;
     [SerializeField] GameObject finaleLight;
-    // Start is called before the first frame update
-    void Start()
-    {
-        monsterAnim.SetBool("idling", true);
+    [SerializeField] GameObject katana;
+
+    public void EnableFinale()
+    {  
         if (InGameData.items.Contains(requiredItemSO))
         {
             toEnableGameObject.SetActive(true);
+            monsterAnim.SetBool("idling", true);
         }
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
+    
     }
 
     public IEnumerator DoCameraSwitch()
@@ -31,6 +37,7 @@ public class FinaleManager : MonoBehaviour
         finaleCamera.depth = 100f;
         playerFlashlight.enabled = false;
         finaleLight.SetActive(true);
+        katana.SetActive(false);
 
         StartCoroutine(screenFade.FadeOut(1f, 0.5f));
         yield return new WaitForSeconds(0.5f);
