@@ -11,5 +11,20 @@ public void New_Game()
 
         SceneManager.LoadScene("ForestScene");
     }
+    public void back_to_menu()
+    {
+
+        SceneManager.LoadScene("Main Menu");
+    }
+    public void credits()
+    {
+
+        SceneManager.LoadScene("Credits");
+    }
+    public void QuitGame()
+    {
+        Application.Quit();
+        print("closed game");
+            }
 
 }
