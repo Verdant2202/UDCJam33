@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Main Menu/Credits.unity
     guid: ae4d83a38fb85c244b4fc9a9242f88fd
+  - enabled: 1
+    path: Assets/Scenes/BedroomScene.unity
+    guid: d0a2f0f919db92540a2462cece71b16b
   m_configObjects: {}

@@ -6,14 +6,30 @@ public class Player : MonoBehaviour
 {
     [SerializeField] FirstPersonController movementController;
     [SerializeField] Transform cameraTransform;
-    [SerializeField]
+    [SerializeField] Animator anim;
+
+    [SerializeField] Rigidbody rb;
     private Interactive currentSelectedInteractive;
 
-    public void CollectSwordPart(SwordPartSO swordPartSO)
-    {
 
+    [SerializeField] FinaleManager finaleManager;
+    public void CallMonsterDeath()
+    {
+        finaleManager.CallMonsterDeath();
     }
 
+    public void DoCameraSwitch()
+    {
+        StartCoroutine(finaleManager.DoCameraSwitch());
+    }
+    public void PlayFinalAnim()
+    {
+        anim.enabled = true;
+        rb.isKinematic = true;
+        rb.useGravity = false;
+        movementController.enabled = false;
+        anim.Play("FinalAnimation");
+    }
     public void GetJumpscared(Transform jumpscareCameraHolder, float lerpTime)
     {
         movementController.playerCanMove = false;

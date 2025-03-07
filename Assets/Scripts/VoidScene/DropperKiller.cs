@@ -18,9 +18,16 @@ public class DropperKiller : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.transform.CompareTag("Player"))
+        if (collision.transform.CompareTag("Player"))
         {
-            GameManager.Instance.SceneReload(0f, 0.1f);
+            ContactPoint contact = collision.contacts[0];
+            Vector3 normal = contact.normal;
+            Debug.Log("Collision Normal: " + normal);
+
+            if (Vector3.Dot(normal, Vector3.down) > 0.25f)
+            {
+                GameManager.Instance.SceneReload(0f, 0.1f);
+            }
         }
     }
 }

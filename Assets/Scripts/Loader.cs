@@ -9,6 +9,7 @@ public static class Loader
     {
         VoidScene,
         ForestScene,
+        BedroomScene
     }
 
     public static void Load(Scene scene)

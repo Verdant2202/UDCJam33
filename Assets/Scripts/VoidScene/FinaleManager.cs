@@ -1,0 +1,62 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class FinaleManager : MonoBehaviour
+{
+    [SerializeField] ItemSO requiredItemSO;
+    [SerializeField] GameObject toEnableGameObject;
+    [SerializeField] Camera finaleCamera;
+    [SerializeField] ScreenFade screenFade;
+    [SerializeField] Animator monsterAnim;
+    [SerializeField] Animator cameraAnim;
+    [SerializeField] Player player;
+    [SerializeField] Light playerFlashlight;
+    [SerializeField] GameObject finaleLight;
+    // Start is called before the first frame update
+    void Start()
+    {
+        monsterAnim.SetBool("idling", true);
+        if (InGameData.items.Contains(requiredItemSO))
+        {
+            toEnableGameObject.SetActive(true);
+        }
+    }
+
+    public IEnumerator DoCameraSwitch()
+    {
+        StartCoroutine(screenFade.FadeIn(1f, 0f));
+        yield return new WaitForSeconds(1f);
+
+        finaleCamera.depth = 100f;
+        playerFlashlight.enabled = false;
+        finaleLight.SetActive(true);
+
+        StartCoroutine(screenFade.FadeOut(1f, 0.5f));
+        yield return new WaitForSeconds(0.5f);
+
+        cameraAnim.Play("CameraAnimation");
+
+        yield return new WaitForSeconds(6f);
+
+        StartCoroutine(screenFade.FadeIn(1f, 0f));
+        yield return new WaitForSeconds(1f);
+        Loader.Load(Loader.Scene.BedroomScene);
+        yield return null;
+    }
+
+    public void CallMonsterDeath()
+    {
+        monsterAnim.Play("Death");
+    }
+    public IEnumerator FinalAnimation()
+    {
+        player.PlayFinalAnim();
+        yield return null;
+    }
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}
