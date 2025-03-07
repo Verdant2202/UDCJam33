@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class Player : MonoBehaviour
 
     [SerializeField] Rigidbody rb;
     private Interactive currentSelectedInteractive;
+
+    [SerializeField] TextMeshProUGUI interactiveText;
 
 
     [SerializeField] FinaleManager finaleManager;
@@ -79,10 +82,20 @@ public class Player : MonoBehaviour
             }
         }
 
-        if(Input.GetKeyDown(KeyCode.E) && currentSelectedInteractive != null)
+        if(currentSelectedInteractive != null)
         {
-            currentSelectedInteractive.Interact();
+            interactiveText.gameObject.SetActive(true);
+            interactiveText.text = "Press E to " + currentSelectedInteractive.Keyword;
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                currentSelectedInteractive.Interact();
+            }
         }
+        else
+        {
+            interactiveText.gameObject.SetActive(false);
+        }
+        
     }
 
     // Start is called before the first frame update

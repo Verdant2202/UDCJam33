@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] ScreenFade screenFade;
     [SerializeField] Loader.Scene scene;
     [SerializeField] Transform swordPartsUIHolder;
+    [SerializeField] Transform itemsUIHolder;
+    [SerializeField] GameObject itemsUIField;
     [SerializeField] ItemSO katanaSO;
     [SerializeField] GameObject playerKatana;
     [SerializeField] FinaleManager finaleManager;
@@ -46,24 +48,35 @@ public class GameManager : MonoBehaviour
 
     public void CreateUI()
     {
-        foreach(SwordPartSO SO in InGameData.swordParts)
+        foreach (Transform child in swordPartsUIHolder)
+        {
+            Destroy(child.gameObject);
+        }
+        foreach (Transform child in itemsUIHolder)
+        {
+            Destroy(child.gameObject);
+        }
+        foreach (SwordPartSO SO in InGameData.swordParts)
         {
             Instantiate(SO.UIObject, swordPartsUIHolder);
         }
         foreach (ItemSO SO in InGameData.items)
         {
-
+            ItemFieldUI itemFieldUI = Instantiate(itemsUIField, itemsUIHolder).GetComponent<ItemFieldUI>();
+            itemFieldUI.itemSO = SO;
+            itemFieldUI.SetVisual();
         }
     }
 
     public void AddSwordPart(SwordPartSO swordPartSO)
     {
-        Instantiate(swordPartSO.UIObject, swordPartsUIHolder);
         InGameData.AddSwordPart(swordPartSO);
+        CreateUI();
     }
     public void AddItem(ItemSO itemSO)
     {
         InGameData.AddItem(itemSO);
+        CreateUI();
     }
     public void PlayerJumpscare(Transform jumpscareCameraHolder, float moveCameraTime, float jumpscareDuration)
     {

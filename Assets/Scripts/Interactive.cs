@@ -6,7 +6,7 @@ using System;
 
 public class Interactive : MonoBehaviour
 {
-    public bool interactiveEnabled;
+    public bool interactiveEnabled = true;
     public UnityEvent interactiveAction;
     public string Keyword;
     public void EnableInteractive(bool enable)

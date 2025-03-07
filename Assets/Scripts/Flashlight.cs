@@ -4,12 +4,29 @@ using UnityEngine;
 
 public class Flashlight : MonoBehaviour
 {
+    [SerializeField] ItemSO flashlightSO;
     [SerializeField] GameObject FlashLight;
-    [SerializeField] bool FlashLightEquipped;
+
+    public void PickUp()
+    {
+        GameManager.Instance.AddItem(flashlightSO);
+        FlashLight.gameObject.SetActive(true);
+        gameObject.SetActive(false);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        FlashLight.gameObject.SetActive(true); 
+        if (InGameData.items.Contains(flashlightSO))
+        {
+            FlashLight.gameObject.SetActive(true);
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            
+        }
+        
     }
 
     // Update is called once per frame
