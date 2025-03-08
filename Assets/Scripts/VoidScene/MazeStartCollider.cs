@@ -21,6 +21,7 @@ public class MazeStartCollider : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            HelpTextManager.Instance.ShowText("Find the lost chest of The Samurai", 2f);
             mazeManager.StartMazeSegment();
             Destroy(gameObject);
         }

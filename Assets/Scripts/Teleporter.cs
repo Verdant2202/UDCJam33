@@ -22,6 +22,7 @@ public class Teleporter : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             other.transform.position = toTeleport.position;
+            HelpTextManager.Instance.ShowText("Complete Dropper to get katana blade", 3f);
         }
     }
 }
