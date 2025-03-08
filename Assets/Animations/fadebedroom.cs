@@ -43,7 +43,6 @@ public class FadeBedroom : MonoBehaviour
         StartCoroutine(EndAnim());
     }
 
-   
     IEnumerator EndAnim()
     {
         blackImage.enabled = true;

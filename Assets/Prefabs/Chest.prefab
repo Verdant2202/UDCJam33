@@ -891,3 +891,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   swordPartSO: {fileID: 0}
   swordPartTransform: {fileID: 6617255909444200571}
+  interactive: {fileID: 6624330547471287392}
