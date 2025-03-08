@@ -9,7 +9,10 @@ public class HouseDoor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(InGameData.doorOpen)
+        {
+            anim.Play("OpenDoor");
+        }
     }
 
     public void OpenDoor()
@@ -18,6 +21,7 @@ public class HouseDoor : MonoBehaviour
         {
             //return;
         }
+        InGameData.doorOpen = true;
         anim.Play("OpenDoor");
     }
     // Update is called once per frame

@@ -9,6 +9,7 @@ public class Flashlight : MonoBehaviour
 
     public void PickUp()
     {
+        HelpTextManager.Instance.ShowText("Go towards the yellow light", 4f, 4f);
         GameManager.Instance.AddItem(flashlightSO);
         FlashLight.gameObject.SetActive(true);
         gameObject.SetActive(false);
@@ -24,7 +25,7 @@ public class Flashlight : MonoBehaviour
         }
         else
         {
-            
+            HelpTextManager.Instance.ShowText("Pick up the flashlight", 4f);
         }
         
     }

@@ -24,11 +24,13 @@ public class GameManager : MonoBehaviour
 
     public void CraftSword()
     {
+      
         foreach (SwordPartSO so in requiredSwordPartsForSword)
         {
             if (!InGameData.swordParts.Contains(so))
             {
-                //return;
+                HelpTextManager.Instance.ShowText("You need all katana parts in order to craft the katana", 2f, 0f, 0.9f, 0.9f);
+                return;
             }
         }
         foreach (SwordPartSO so in requiredSwordPartsForSword)
@@ -43,7 +45,7 @@ public class GameManager : MonoBehaviour
         InGameData.AddItem(katanaSO);
         CreateUI();
         finaleManager.EnableFinale();
-       
+        HelpTextManager.Instance.ShowText("GO KILL THE MONSTER", 3f, 0f, 0.5f, 0.5f);
     }
 
     public void CreateUI()

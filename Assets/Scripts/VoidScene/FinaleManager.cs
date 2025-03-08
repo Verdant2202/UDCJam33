@@ -32,7 +32,7 @@ public class FinaleManager : MonoBehaviour
     public IEnumerator DoCameraSwitch()
     {
         StartCoroutine(screenFade.FadeIn(1f, 0f));
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
 
         finaleCamera.depth = 100f;
         playerFlashlight.enabled = false;

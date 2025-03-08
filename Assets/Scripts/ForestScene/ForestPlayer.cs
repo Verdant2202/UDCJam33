@@ -41,6 +41,7 @@ public class ForestPlayer : MonoBehaviour
         anim.Play("ForestAnimation");
         StartCoroutine(Freeze(3f));
         await Task.Delay(3000);
+        HelpTextManager.Instance.ShowText("Run!", 2f);
         rb.isKinematic = false;
         anim.enabled = false;
         movementController.enabled = true;
@@ -86,7 +87,7 @@ public class ForestPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+   
     }
 
     // Update is called once per frame
