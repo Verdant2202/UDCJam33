@@ -40,11 +40,14 @@ public class FadeBedroom : MonoBehaviour
     public void EndAnimSequence()
     {
         show.Play();
-        EndAnim();
+        StartCoroutine(EndAnim());
     }
 
-    void EndAnim()
+   
+    IEnumerator EndAnim()
     {
         blackImage.enabled = true;
+        yield return new WaitForSeconds(6f);
+        Loader.Load(Loader.Scene.MainMenu);
     }
 }
