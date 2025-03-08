@@ -39,7 +39,7 @@ public class PlayerFootstepsManager : MonoBehaviour
             sprintAudioSource.enabled = false;
         }
 
-        if (Time.timeScale == 0f)
+        if (Time.timeScale == 0f || !movement.isGrounded)
         {
             walkAudioSource.enabled = false;
             sprintAudioSource.enabled = false;
