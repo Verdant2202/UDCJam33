@@ -14,6 +14,10 @@ public class DropperManager : MonoBehaviour
     [SerializeField] float lightChangeLerpDuration;
     [SerializeField] float playerDropperMoveSpeed = 12f;
 
+    [SerializeField] SongSO dropperSong;
+    [SerializeField] SongSO ambienceSong;
+
+    [SerializeField] SFXSO fallingSFX;
     bool segmentOn = false;
     float defaultRange;
     float defaultIntensity;
@@ -35,12 +39,17 @@ public class DropperManager : MonoBehaviour
         playerFPSController.walkSpeed = playerDropperMoveSpeed;
         playerFPSController.sprintSpeed = playerDropperMoveSpeed;
         StartCoroutine(LerpLightIntensity(playerFlashlight, playerDropperLightIntensity, playerDropperLightRange, lightChangeLerpDuration));
+        MusicManager.Instance.PlaySong(dropperSong);
+        MusicManager.Instance.StopSong(ambienceSong);
+        SFXManager.Instance.PlaySFX(fallingSFX);
     }
     public void EndDropperSegment()
     {
         segmentOn = false;
         playerFPSController.walkSpeed = 4f;
         playerFPSController.sprintSpeed = 7f;
+        MusicManager.Instance.StopSong(dropperSong);
+        MusicManager.Instance.PlaySong(ambienceSong);
         StartCoroutine(LerpLightIntensity(playerFlashlight, defaultIntensity, defaultRange, lightChangeLerpDuration));
     }
     private IEnumerator LerpLightIntensity(Light light, float targetIntensity, float targetRange, float duration)

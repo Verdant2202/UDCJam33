@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject pauseMenuGameObject;
 
     [SerializeField] List<SwordPartSO> requiredSwordPartsForSword;
+
+    [SerializeField] SongSO voidAmbience;
+    [SerializeField] SFXSO craftSwordSFX;
     private void Awake()
     {
         Instance = this;
@@ -25,6 +28,7 @@ public class GameManager : MonoBehaviour
 
     public void Resume()
     {
+        MusicManager.Instance.ResumeAllSongs();
         pauseMenuGameObject.SetActive(false);
         player.SetActiveMovementController(true);
         Cursor.visible = false;
@@ -34,6 +38,7 @@ public class GameManager : MonoBehaviour
 
     public void Pause()
     {
+        MusicManager.Instance.StopAllSongs();
         pauseMenuGameObject.SetActive(true); 
         player.SetActiveMovementController(false);
         Cursor.visible = true;
@@ -66,6 +71,7 @@ public class GameManager : MonoBehaviour
                 return;
             }
         }
+        SFXManager.Instance.PlaySFX(craftSwordSFX);
         foreach (SwordPartSO so in requiredSwordPartsForSword)
         {
             InGameData.swordParts.Remove(so);
@@ -121,6 +127,7 @@ public class GameManager : MonoBehaviour
 
     public async void SceneReload(float waitDuration, float fadeDuration)
     {
+        MusicManager.Instance.StopAllSongs();
         StartCoroutine(screenFade.FadeIn(fadeDuration, waitDuration));
         await Task.Delay((int)(waitDuration * 1000) + (int)(fadeDuration * 1000));
         Loader.Load(scene);
@@ -129,6 +136,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        MusicManager.Instance.PlaySong(voidAmbience);
         CreateUI();
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;

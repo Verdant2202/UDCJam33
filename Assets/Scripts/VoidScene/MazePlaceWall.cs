@@ -21,7 +21,6 @@ public class MazePlaceWall : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            HelpTextManager.Instance.ShowText("Open The lost samurai chest", 1f);
             wall.SetActive(true);
         }
     }

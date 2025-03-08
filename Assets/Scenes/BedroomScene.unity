@@ -878,12 +878,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imageComponent: {fileID: 1380010731}
   animator: {fileID: 980915535}
-  audioSource: {fileID: 980915540}
-  show: {fileID: 980915541}
   monster: {fileID: 414912309}
   blackImage: {fileID: 1380010731}
   monsterAnimator: {fileID: 713330068}
   monsterAnimationName: BedroomAnimation
+  bedroomSong: {fileID: 11400000, guid: 425da4b2f9af48c4cb802eee98c56a20, type: 2}
+  wakeup: {fileID: 11400000, guid: fa1df5f5757d99d4783739a83289f1fa, type: 2}
+  endgame: {fileID: 11400000, guid: e9327dab85b9f0c488fc4c92a5cf9d5b, type: 2}
 --- !u!82 &980915540
 AudioSource:
   m_ObjectHideFlags: 0

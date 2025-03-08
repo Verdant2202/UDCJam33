@@ -11,6 +11,8 @@ public class ForestMonster : MonoBehaviour
     [SerializeField] float jumpscareDuration = 2f;
     [SerializeField] ForestJumpscareManager jumpscareManager;
     [SerializeField] MonsterForestNavmeshscript nav;
+    [SerializeField] SongSO forestAmbience;
+    [SerializeField] SongSO forestChase;
     public IEnumerator Jumpscare()
     {
         transform.LookAt(playerTransform);
@@ -19,6 +21,8 @@ public class ForestMonster : MonoBehaviour
         nav.follow = false;
         yield return new WaitForSeconds(cameraJumpscareLerpTime);
         anim.Play("Jumpscare");
+        MusicManager.Instance.StopSong(forestAmbience, 2f);
+        MusicManager.Instance.StopSong(forestChase, 1.5f);
 
     }
     // Start is called before the first frame update
