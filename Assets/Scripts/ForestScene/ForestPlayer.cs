@@ -9,7 +9,8 @@ public class ForestPlayer : MonoBehaviour
     [SerializeField] Transform cameraTransform;
     [SerializeField] Rigidbody rb;
     [SerializeField] Animator anim;
-
+    [SerializeField] SongSO forestAmbience;
+    [SerializeField] SongSO forestChase;
     public void SetActiveMovementController(bool set)
     {
         movementController.enabled = set;
@@ -43,8 +44,11 @@ public class ForestPlayer : MonoBehaviour
         anim.enabled = true;
         rb.isKinematic = true;
         anim.Play("ForestAnimation");
-        StartCoroutine(Freeze(3f));
-        await Task.Delay(3000);
+        StartCoroutine(Freeze(1.5f));
+        await Task.Delay(1500);
+        MusicManager.Instance.PlaySong(forestChase, 1.5f);
+        StartCoroutine(Freeze(1.5f));
+        await Task.Delay(1500);
         HelpTextManager.Instance.ShowText("Run!", 2f);
         rb.isKinematic = false;
         anim.enabled = false;
@@ -57,6 +61,7 @@ public class ForestPlayer : MonoBehaviour
     {
         movementController.playerCanMove = false;
         MoveAndDockCamera(jumpscareCameraHolder, lerpTime);
+        
     }
     public void MoveAndDockCamera(Transform parent, float time)
     {
@@ -91,7 +96,7 @@ public class ForestPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-   
+        MusicManager.Instance.PlaySong(forestAmbience);
     }
 
     // Update is called once per frame
