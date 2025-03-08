@@ -10,7 +10,6 @@ public class ForestPauseManager : MonoBehaviour
     {
         pauseMenuGameObject.SetActive(false);
         player.SetActiveMovementController(true);
-        MusicManager.Instance.ResumeAllSongs();
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1f;
@@ -20,7 +19,6 @@ public class ForestPauseManager : MonoBehaviour
     {
         pauseMenuGameObject.SetActive(true);
         player.SetActiveMovementController(false);
-        MusicManager.Instance.StopAllSongs();
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0f;

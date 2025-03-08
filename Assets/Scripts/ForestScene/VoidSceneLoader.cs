@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 public class VoidSceneLoader : MonoBehaviour
 {
     [SerializeField] ScreenFade screenFade;
-    [SerializeField] SongSO song1;
-    [SerializeField] SongSO song2;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,8 +25,6 @@ public class VoidSceneLoader : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            MusicManager.Instance.StopSong(song1);
-            MusicManager.Instance.StopSong(song2);
             StartCoroutine(screenFade.FadeIn(0.1f, 0f));
             StartCoroutine(Loadscene());
         }

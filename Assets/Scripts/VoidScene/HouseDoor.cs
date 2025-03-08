@@ -6,7 +6,6 @@ public class HouseDoor : MonoBehaviour
 {
     [SerializeField] Animator anim;
     [SerializeField] SwordPartSO requiredSwordPart;
-    [SerializeField] SFXSO doorOpenSFX;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +21,6 @@ public class HouseDoor : MonoBehaviour
         {
             //return;
         }
-        SFXManager.Instance.PlaySFX(doorOpenSFX);
         InGameData.doorOpen = true;
         anim.Play("OpenDoor");
     }

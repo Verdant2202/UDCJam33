@@ -15,10 +15,6 @@ public class FinaleManager : MonoBehaviour
     [SerializeField] GameObject finaleLight;
     [SerializeField] GameObject katana;
 
-    [SerializeField] SongSO ambienceSong;
-    [SerializeField] SongSO monsterKillSong;
-
-    [SerializeField] SFXSO monsterDeath;
     public void EnableFinale()
     {  
         if (InGameData.items.Contains(requiredItemSO))
@@ -45,14 +41,12 @@ public class FinaleManager : MonoBehaviour
 
         StartCoroutine(screenFade.FadeOut(1f, 0.5f));
         yield return new WaitForSeconds(0.5f);
-        MusicManager.Instance.StopSong(ambienceSong);
-        MusicManager.Instance.PlaySong(monsterKillSong, 0.5f);
+
         cameraAnim.Play("CameraAnimation");
 
         yield return new WaitForSeconds(6f);
 
-        StartCoroutine(screenFade.FadeIn(1f, 0f)); 
-        MusicManager.Instance.StopSong(monsterKillSong);
+        StartCoroutine(screenFade.FadeIn(1f, 0f));
         yield return new WaitForSeconds(1f);
         Loader.Load(Loader.Scene.BedroomScene);
         yield return null;
@@ -60,7 +54,6 @@ public class FinaleManager : MonoBehaviour
 
     public void CallMonsterDeath()
     {
-        SFXManager.Instance.PlaySFX(monsterDeath);
         monsterAnim.Play("Death");
     }
     public IEnumerator FinalAnimation()

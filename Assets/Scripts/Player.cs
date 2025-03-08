@@ -71,7 +71,7 @@ public class Player : MonoBehaviour
 
     void HandleInteractives()
     {
-        RaycastHit[] raycastHits = Physics.RaycastAll(cameraTransform.position, cameraTransform.forward, 4f);
+        RaycastHit[] raycastHits = Physics.RaycastAll(cameraTransform.position, cameraTransform.forward, 5f);
         currentSelectedInteractive = null;
         foreach(RaycastHit hit in raycastHits)
         {

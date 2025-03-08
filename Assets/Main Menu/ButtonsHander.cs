@@ -7,11 +7,8 @@ public class ButtonsHander : MonoBehaviour
 {
     [SerializeField] GameObject credits;
     [SerializeField] GameObject mainMenu;
-
-    [SerializeField] SongSO mainMenuSong;
     public void NewGame()
     {
-        MusicManager.Instance.StopSong(mainMenuSong, 0.5f);
         SceneManager.LoadScene("ForestScene");
     }
     public void BackToMenu()
@@ -27,12 +24,7 @@ public class ButtonsHander : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
-        MusicManager.Instance.StopSong(mainMenuSong, 2f);
-    }
-
-    private void Start()
-    {
-        MusicManager.Instance.PlaySong(mainMenuSong, 0f);
+        print("closed game");
     }
 
 }

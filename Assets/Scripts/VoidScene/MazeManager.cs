@@ -8,13 +8,9 @@ public class MazeManager : MonoBehaviour
     [SerializeField] SwordPartSO requiredSwordPartSO;
     [SerializeField] GameObject mazeGameObject;
 
-    [SerializeField] SongSO mazeSong;
-    [SerializeField] SongSO ambienceSong;
     public void StartMazeSegment()
     {
         monsterMaze.EnableMonster();
-        MusicManager.Instance.PlaySong(mazeSong);
-        MusicManager.Instance.StopSong(ambienceSong);
     }
 
     // Start is called before the first frame update

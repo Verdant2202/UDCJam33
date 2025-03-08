@@ -31,7 +31,7 @@ Transform:
   - {fileID: 2424380744685680177}
   m_Father: {fileID: 2174892956805640985}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -87.54178, y: 90, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1708367349029331708
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,7 +183,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2424380744685680177}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -6.0508264e-15, y: 1.7327323e-13, z: 91.99999}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2236176615476530022
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,7 +513,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2089739395527093011}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -65, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5170884627213762266
 GameObject:
   m_ObjectHideFlags: 0
@@ -663,7 +663,7 @@ Transform:
   - {fileID: 2089739395527093011}
   m_Father: {fileID: 5959633016916876914}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -1.1783626, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6960387478278890606
 GameObject:
   m_ObjectHideFlags: 0
@@ -757,7 +757,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8666674442134734578}
   - component: {fileID: 3361403481643031688}
-  - component: {fileID: 5558562234153230858}
   m_Layer: 0
   m_Name: Chest_Box_Wooden
   m_TagString: Untagged
@@ -802,21 +801,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5558562234153230858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8290536270788402248}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd161354ca1260548ae4685c7441197b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  forestJumpscare: {fileID: 0}
-  Jumpscare: {fileID: 0}
-  ChestOpen: {fileID: 11400000, guid: 34e95bbebf3d6364289a7c1005c55356, type: 2}
 --- !u!1 &8694720124227882682
 GameObject:
   m_ObjectHideFlags: 0

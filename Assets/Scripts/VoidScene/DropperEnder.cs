@@ -5,8 +5,6 @@ using UnityEngine;
 public class DropperEnder : MonoBehaviour
 {
     [SerializeField] DropperManager dropperManager;
-    [SerializeField] SFXSO hitGround;
-    [SerializeField] SFXSO falling;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,8 +20,6 @@ public class DropperEnder : MonoBehaviour
     {
         if (other.transform.CompareTag("Player"))
         {
-            SFXManager.Instance.PlaySFX(hitGround);
-            SFXManager.Instance.StopSFX(falling);
             dropperManager.EndDropperSegment();
         }
     }
