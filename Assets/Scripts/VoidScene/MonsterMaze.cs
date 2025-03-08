@@ -25,7 +25,15 @@ public class MonsterMaze : Monster
 
     [Range(0f, 1f)][SerializeField] float runProbability = 0.2f;
 
-  
+    [SerializeField] SFXSO footstepsSFX;
+    [SerializeField] SFXSO runFootstepsSFX;
+    [SerializeField] AudioSource footstepsAudioSource;
+    [SerializeField] AudioSource runFootstepsAudioSource;
+    bool running;
+
+    [SerializeField] float MinDist = 3f;
+    [SerializeField] float MaxDist = 10f;
+
     public void EnableMonster()
     {
         enabled = true;
@@ -71,8 +79,10 @@ public class MonsterMaze : Monster
     IEnumerator EnableRun()
     {
         SetRunning(true);
+        running = true;
         yield return new WaitForSeconds(runDuration);
         runTimer = 0f;
+        running = false;
         SetRunning(false);
     }
 
@@ -86,6 +96,9 @@ public class MonsterMaze : Monster
     // Start is called before the first frame update
     void Start()
     {
+        running = false;
+        footstepsAudioSource.clip = footstepsSFX.clip;
+        runFootstepsAudioSource.clip = runFootstepsSFX.clip;
         enabled = false;
         teleportTimer = 0f;
         currentWarpPoint = GetNearestWarpPoint(transform);
@@ -124,9 +137,28 @@ public class MonsterMaze : Monster
         }
     }
 
+    public void ControlFootstepsVolume()
+    {
+        float distance = Vector3.Distance(transform.position, playerTransform.position);
+
+        // Clamp the distance to be between MinDist and MaxDist
+        float normalizedDistance = Mathf.Clamp01((MaxDist - distance) / (MaxDist - MinDist));
+
+        // Calculate new volume (100% at MinDist, 0% at MaxDist)
+        footstepsAudioSource.volume = footstepsSFX.naturalVolume * SFXManager.Instance.globalSFXVolume * normalizedDistance;
+        runFootstepsAudioSource.volume = runFootstepsSFX.naturalVolume * SFXManager.Instance.globalSFXVolume * normalizedDistance;
+    }
+
     // Update is called once per frame
     void Update()
     {
+        footstepsAudioSource.enabled = enabled;
+        runFootstepsAudioSource.enabled = running;
+        if (running)
+        {
+            footstepsAudioSource.enabled = false;
+        }
+        ControlFootstepsVolume();
         if(enabled)
         {
             agent.SetDestination(playerTransform.position);
@@ -135,6 +167,12 @@ public class MonsterMaze : Monster
             HandleTeleportation();
             HandleRun();
         }
+        if (Time.timeScale == 0f)
+        {
+            footstepsAudioSource.enabled = false;
+            runFootstepsAudioSource.enabled = false;
+        }
+
 
     }
 }

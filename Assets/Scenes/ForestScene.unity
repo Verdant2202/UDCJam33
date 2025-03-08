@@ -4506,6 +4506,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 2090819206}
   pauseMenuGameObject: {fileID: 2138738352}
+  footstepsManager: {fileID: 1887101075}
 --- !u!1 &885377015 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4920764858631379228, guid: 1c56836488135234eb5e0ba36ad23766,
@@ -5058,6 +5059,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   forestJumpscare: {fileID: 11400000, guid: 13c0cfa80b5eaf44ab9886289ce508f1, type: 2}
   Jumpscare: {fileID: 0}
+  ChestOpen: {fileID: 0}
 --- !u!1001 &988815438
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8838,6 +8840,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   forestJumpscare: {fileID: 0}
   Jumpscare: {fileID: 0}
+  ChestOpen: {fileID: 0}
 --- !u!1001 &1344584325
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11484,6 +11487,18 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 5930137839296245688, guid: d55777a6ef97dc7488fe00283c40da86, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d55777a6ef97dc7488fe00283c40da86, type: 3}
+--- !u!114 &1887101075 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5795972250391598933, guid: d55777a6ef97dc7488fe00283c40da86,
+    type: 3}
+  m_PrefabInstance: {fileID: 1887101074}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714672378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14eb54b130b39074dbf564e15476cc51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1887101076 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 899438147792732492, guid: d55777a6ef97dc7488fe00283c40da86,

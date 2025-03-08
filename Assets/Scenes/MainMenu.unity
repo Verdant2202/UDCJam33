@@ -3194,6 +3194,14 @@ MonoBehaviour:
     source: {fileID: 0}
   - sfxData: {fileID: 11400000, guid: 66131903314435c43806cf88e3f9076a, type: 2}
     source: {fileID: 0}
+  - sfxData: {fileID: 11400000, guid: bf78f63654b355e4680abf5c8cd2e483, type: 2}
+    source: {fileID: 0}
+  - sfxData: {fileID: 11400000, guid: b4da93ad79ea70647aeed75790476d7a, type: 2}
+    source: {fileID: 0}
+  - sfxData: {fileID: 11400000, guid: 6cd71d2e08a69a54faacb1c0d6ae0326, type: 2}
+    source: {fileID: 0}
+  - sfxData: {fileID: 11400000, guid: 412031bbaf88fb74a824d24032f2f657, type: 2}
+    source: {fileID: 0}
 --- !u!4 &913949359
 Transform:
   m_ObjectHideFlags: 0

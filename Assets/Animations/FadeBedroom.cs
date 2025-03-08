@@ -29,6 +29,7 @@ public class FadeBedroom : MonoBehaviour
         animator.enabled = true;
         StartCoroutine(DisableAfterDelaye());
     }
+
     IEnumerator DisableAfterDelaye()
     {
         yield return new WaitForSeconds(0.15f); // Wait for 0.15 seconds

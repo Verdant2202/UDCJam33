@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Falling
   m_EditorClassIdentifier: 
   sfxName: 
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 148578cc5021fdd49a39ef6d60a7cc44, type: 3}
   naturalVolume: 1
   isLooped: 1

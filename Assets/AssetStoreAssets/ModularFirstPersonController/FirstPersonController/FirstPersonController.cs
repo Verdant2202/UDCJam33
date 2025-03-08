@@ -14,6 +14,7 @@ using UnityEngine.UI;
     using System.Net;
 #endif
 
+
 public class FirstPersonController : MonoBehaviour
 {
     private Rigidbody rb;
@@ -60,7 +61,7 @@ public class FirstPersonController : MonoBehaviour
     public float maxVelocityChange = 10f;
 
     // Internal Variables
-    private bool isWalking = false;
+    public bool isWalking = false;
 
     #region Sprint
 
@@ -83,7 +84,7 @@ public class FirstPersonController : MonoBehaviour
 
     // Internal Variables
     private CanvasGroup sprintBarCG;
-    private bool isSprinting = false;
+    public bool isSprinting = false;
     private float sprintRemaining;
     private float sprintBarWidth;
     private float sprintBarHeight;
@@ -412,7 +413,6 @@ public class FirstPersonController : MonoBehaviour
                         sprintBarCG.alpha += 5 * Time.deltaTime;
                     }
                 }
-
                 rb.AddForce(velocityChange, ForceMode.VelocityChange);
             }
             // All movement calculations while walking
@@ -725,7 +725,7 @@ public class FirstPersonController : MonoBehaviour
         #endregion
 
         //Sets any changes from the prefab
-        if(GUI.changed)
+        if (GUI.changed)
         {
             EditorUtility.SetDirty(fpc);
             Undo.RecordObject(fpc, "FPC Change");
