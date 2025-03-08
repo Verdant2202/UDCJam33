@@ -13,9 +13,12 @@ public class Player : MonoBehaviour
     private Interactive currentSelectedInteractive;
 
     [SerializeField] TextMeshProUGUI interactiveText;
-
-
     [SerializeField] FinaleManager finaleManager;
+
+    public void SetActiveMovementController(bool set)
+    {
+        movementController.enabled = set;
+    }
     public void CallMonsterDeath()
     {
         finaleManager.CallMonsterDeath();

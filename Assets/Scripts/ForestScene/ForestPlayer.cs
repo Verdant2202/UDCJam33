@@ -9,7 +9,11 @@ public class ForestPlayer : MonoBehaviour
     [SerializeField] Transform cameraTransform;
     [SerializeField] Rigidbody rb;
     [SerializeField] Animator anim;
-    
+
+    public void SetActiveMovementController(bool set)
+    {
+        movementController.enabled = set;
+    }
     public IEnumerator Freeze(float time)
     {
         movementController.cameraCanMove = false;

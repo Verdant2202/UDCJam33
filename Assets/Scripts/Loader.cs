@@ -9,7 +9,8 @@ public static class Loader
     {
         VoidScene,
         ForestScene,
-        BedroomScene
+        BedroomScene,
+        MainMenu
     }
 
     public static void Load(Scene scene)

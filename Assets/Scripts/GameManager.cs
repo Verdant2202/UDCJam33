@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] ItemSO katanaSO;
     [SerializeField] GameObject playerKatana;
     [SerializeField] FinaleManager finaleManager;
+    [SerializeField] GameObject pauseMenuGameObject;
 
     [SerializeField] List<SwordPartSO> requiredSwordPartsForSword;
     private void Awake()
@@ -22,9 +23,41 @@ public class GameManager : MonoBehaviour
         Instance = this;
     }
 
+    public void Resume()
+    {
+        pauseMenuGameObject.SetActive(false);
+        player.SetActiveMovementController(true);
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Time.timeScale = 1f;
+    }
+
+    public void Pause()
+    {
+        pauseMenuGameObject.SetActive(true); 
+        player.SetActiveMovementController(false);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        Time.timeScale = 0f;
+    }
+
+    public void PauseSceneReload()
+    {
+        Time.timeScale = 1f;
+        SceneReload(0.1f, 0.6f);
+    }
+
+    public void PauseQuit()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        Time.timeScale = 1f;
+        Loader.Load(Loader.Scene.MainMenu);
+    }
+
+
     public void CraftSword()
     {
-      
         foreach (SwordPartSO so in requiredSwordPartsForSword)
         {
             if (!InGameData.swordParts.Contains(so))
@@ -97,11 +130,23 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         CreateUI();
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(pauseMenuGameObject.activeSelf)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
+        }
     }
 }
