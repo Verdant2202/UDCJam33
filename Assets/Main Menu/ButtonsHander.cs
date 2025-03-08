@@ -5,26 +5,26 @@ using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 public class ButtonsHander : MonoBehaviour
 {
-
-public void New_Game()
+    [SerializeField] GameObject credits;
+    [SerializeField] GameObject mainMenu;
+    public void NewGame()
     {
-
         SceneManager.LoadScene("ForestScene");
     }
-    public void back_to_menu()
+    public void BackToMenu()
     {
-
-        SceneManager.LoadScene("Main Menu");
+        mainMenu.SetActive(true);
+        credits.SetActive(false);
     }
-    public void credits()
+    public void ToCredits()
     {
-
-        SceneManager.LoadScene("Credits");
+        mainMenu.SetActive(false);
+        credits.SetActive(true);
     }
     public void QuitGame()
     {
         Application.Quit();
         print("closed game");
-            }
+    }
 
 }

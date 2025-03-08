@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class VoidSceneLoader : MonoBehaviour
 {
+    [SerializeField] ScreenFade screenFade;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,11 +16,17 @@ public class VoidSceneLoader : MonoBehaviour
     {
         
     }
+    IEnumerator Loadscene()
+    {
+        yield return new WaitForSeconds(0.15f);
+        Loader.Load(Loader.Scene.VoidScene);
+    }
     private void OnTriggerEnter(Collider collision)
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene("VoidScene");
+            StartCoroutine(screenFade.FadeIn(0.1f, 0f));
+            StartCoroutine(Loadscene());
         }
     }
 }

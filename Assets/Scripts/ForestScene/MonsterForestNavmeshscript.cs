@@ -6,8 +6,18 @@ public class MonsterForestNavmeshscript : MonoBehaviour
 {
     public NavMeshAgent agent;
     public Transform player;
+
+    public bool follow = true;
+    private void Start()
+    {
+        follow = true;
+    }
     void Update()
     {
-        agent.SetDestination(player.position);
+        if(follow == true)
+        {
+            agent.SetDestination(player.position);
+        }
+
     }
 }

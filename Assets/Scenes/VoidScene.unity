@@ -8769,7 +8769,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.29999998
+  m_VoxelSize: 0.38333333
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: df5ed2bbf03612c45819a657e6a65f0c, type: 2}
   m_BuildHeightMesh: 0
@@ -16357,6 +16357,82 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1596657490}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1598200987
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1598200988}
+  - component: {fileID: 1598200990}
+  - component: {fileID: 1598200989}
+  m_Layer: 0
+  m_Name: Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1598200988
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598200987}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: -0, z: 0.048}
+  m_LocalScale: {x: 1, y: 1, z: 2}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1057038732809531586}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1598200989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598200987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e3b9bcaaf32c6546b3f8e2fbb6aa18b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactiveEnabled: 1
+  interactiveAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4039144823579599711}
+        m_TargetAssemblyTypeName: HouseDoor, Assembly-CSharp
+        m_MethodName: OpenDoor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  Keyword: open (Key required)
+--- !u!64 &1598200990
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598200987}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8123095675721969769, guid: 8ed08234ea725a54d8429b97f88689d8, type: 3}
 --- !u!1 &1600694536
 GameObject:
   m_ObjectHideFlags: 0
@@ -18126,7 +18202,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1999651514}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.107, y: 0.013, z: -1.387}
+  m_LocalPosition: {x: 3.84, y: 0.013, z: 0.81}
   m_LocalScale: {x: 2.9967008, y: 2.9967008, z: 2.9967008}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -19086,8 +19162,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.10452786, y: 0.121010795, z: 0.3182547}
-  m_Center: {x: -0.0009350523, y: 0.00651484, z: -0.026283043}
+  m_Size: {x: 0.10452786, y: 0.28817677, z: 0.3182547}
+  m_Center: {x: -0.0009350523, y: 0.090096734, z: -0.026283043}
 --- !u!33 &964997507053370125
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -19209,7 +19285,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.0054388084, z: -0.02499998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1598200988}
   m_Father: {fileID: 1600694537}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19642,8 +19719,6 @@ GameObject:
   - component: {fileID: 1057038732809531586}
   - component: {fileID: 4976390543486035404}
   - component: {fileID: 9051425997889564853}
-  - component: {fileID: 9051425997889564855}
-  - component: {fileID: 9051425997889564854}
   m_Layer: 0
   m_Name: DOOR
   m_TagString: Untagged
@@ -28443,49 +28518,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &9051425997889564854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2176946480521235426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e3b9bcaaf32c6546b3f8e2fbb6aa18b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactiveEnabled: 1
-  interactiveAction:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4039144823579599711}
-        m_TargetAssemblyTypeName: HouseDoor, Assembly-CSharp
-        m_MethodName: OpenDoor
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  Keyword: open (Key required)
---- !u!64 &9051425997889564855
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2176946480521235426}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 8123095675721969769, guid: 8ed08234ea725a54d8429b97f88689d8, type: 3}
 --- !u!4 &9084910836227951930
 Transform:
   m_ObjectHideFlags: 0

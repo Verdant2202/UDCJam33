@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ForestMonsterJumpscareCollider : MonoBehaviour
 {
-    [SerializeField] Monster monster;
+    [SerializeField] ForestMonster monster;
     // Start is called before the first frame update
     void Start()
     {
