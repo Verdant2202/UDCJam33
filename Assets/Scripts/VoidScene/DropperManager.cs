@@ -13,7 +13,7 @@ public class DropperManager : MonoBehaviour
     [SerializeField] float playerDropperLightRange;
     [SerializeField] float lightChangeLerpDuration;
     [SerializeField] float playerDropperMoveSpeed = 12f;
-
+    public Transform player;
     [SerializeField] SongSO dropperSong;
     [SerializeField] SongSO ambienceSong;
 
@@ -42,6 +42,7 @@ public class DropperManager : MonoBehaviour
         MusicManager.Instance.PlaySong(dropperSong);
         MusicManager.Instance.StopSong(ambienceSong);
         SFXManager.Instance.PlaySFX(fallingSFX);
+
     }
     public void EndDropperSegment()
     {
@@ -78,6 +79,10 @@ public class DropperManager : MonoBehaviour
         if(segmentOn)
         {
             playerRigidbody.velocity = new Vector3(playerRigidbody.velocity.x, Mathf.Clamp(playerRigidbody.velocity.y, -50f, 50f), playerRigidbody.velocity.z);
+        }
+        if (player.position.y == 1)
+        {
+            SFXManager.Instance.StopSFX(fallingSFX);
         }
     }
 }

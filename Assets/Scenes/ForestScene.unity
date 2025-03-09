@@ -4470,6 +4470,7 @@ GameObject:
   m_Component:
   - component: {fileID: 880900885}
   - component: {fileID: 880900886}
+  - component: {fileID: 880900887}
   m_Layer: 0
   m_Name: PauseManager
   m_TagString: Untagged
@@ -4506,6 +4507,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 2090819206}
   pauseMenuGameObject: {fileID: 2138738352}
+--- !u!114 &880900887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 880900884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d7485f7c4f5a1e4dad1724eecbacb8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &885377015 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4920764858631379228, guid: 1c56836488135234eb5e0ba36ad23766,
