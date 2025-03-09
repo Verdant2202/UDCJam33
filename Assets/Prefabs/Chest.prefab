@@ -908,3 +908,4 @@ MonoBehaviour:
   swordPartSO: {fileID: 0}
   swordPartTransform: {fileID: 6617255909444200571}
   interactive: {fileID: 6624330547471287392}
+  pickUpSFX: {fileID: 11400000, guid: 8989217beeebe2f46a09730769716fd2, type: 2}

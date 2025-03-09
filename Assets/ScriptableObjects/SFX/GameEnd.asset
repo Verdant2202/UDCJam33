@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: GameEnd
   m_EditorClassIdentifier: 
   sfxName: 
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: cd39f3a7985320b4b8966cf697b3c437, type: 3}
   naturalVolume: 1
   isLooped: 0

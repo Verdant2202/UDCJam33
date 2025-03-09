@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: DoorsOpen
   m_EditorClassIdentifier: 
   sfxName: 
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 888329cd79d990d4eae1e998037dedd9, type: 3}
   naturalVolume: 1
   isLooped: 0

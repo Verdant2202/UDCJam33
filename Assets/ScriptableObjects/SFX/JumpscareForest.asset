@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: JumpscareForest
   m_EditorClassIdentifier: 
   sfxName: 
-  clip: {fileID: 0}
-  naturalVolume: 1
+  clip: {fileID: 8300000, guid: 7be9577ba31931a4ab54e6c676aeb2b4, type: 3}
+  naturalVolume: 0.496
   isLooped: 0

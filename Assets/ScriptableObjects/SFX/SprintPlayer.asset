@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SprintPlayer
   m_EditorClassIdentifier: 
   sfxName: 
-  clip: {fileID: 8300000, guid: e8512d89cd30ac54fabe763aa084c59d, type: 3}
+  clip: {fileID: 8300000, guid: 66eabf541eafdef4ca136802818140db, type: 3}
   naturalVolume: 1
   isLooped: 0

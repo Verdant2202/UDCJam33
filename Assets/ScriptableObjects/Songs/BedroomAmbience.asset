@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: BedroomAmbience
   m_EditorClassIdentifier: 
   songName: BedroomAmbience
-  clip: {fileID: 8300000, guid: eca24166b0066dd4caaa343368b068c9, type: 3}
-  naturalVolume: 0.558
+  clip: {fileID: 8300000, guid: 5653ee0adac17ee4ab8d548daa5fddcc, type: 3}
+  naturalVolume: 0.241

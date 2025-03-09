@@ -11,12 +11,16 @@ public class ForestPlayer : MonoBehaviour
     [SerializeField] Animator anim;
     [SerializeField] SongSO forestAmbience;
     [SerializeField] SongSO forestChase;
+    public bool frozen = false;
     public void SetActiveMovementController(bool set)
     {
         movementController.enabled = set;
     }
+
+   
     public IEnumerator Freeze(float time)
     {
+        frozen = true;
         movementController.cameraCanMove = false;
         movementController.playerCanMove = false;
         movementController.enabled = false;
@@ -25,6 +29,7 @@ public class ForestPlayer : MonoBehaviour
         movementController.enabled = true;
         movementController.cameraCanMove = true;
         movementController.playerCanMove = true;
+        frozen = false;
     }
 
     public void ChangeSpeed(float speed)
@@ -44,11 +49,9 @@ public class ForestPlayer : MonoBehaviour
         anim.enabled = true;
         rb.isKinematic = true;
         anim.Play("ForestAnimation");
-        StartCoroutine(Freeze(1.5f));
-        await Task.Delay(1500);
         MusicManager.Instance.PlaySong(forestChase, 1.5f);
-        StartCoroutine(Freeze(1.5f));
-        await Task.Delay(1500);
+        StartCoroutine(Freeze(3f));
+        await Task.Delay(3000);
         HelpTextManager.Instance.ShowText("Run!", 2f);
         rb.isKinematic = false;
         anim.enabled = false;

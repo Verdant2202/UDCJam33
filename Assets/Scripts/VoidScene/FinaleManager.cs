@@ -19,6 +19,7 @@ public class FinaleManager : MonoBehaviour
     [SerializeField] SongSO monsterKillSong;
 
     [SerializeField] SFXSO monsterDeath;
+    [SerializeField] PlayerFootstepsManager pFM;
     public void EnableFinale()
     {  
         if (InGameData.items.Contains(requiredItemSO))
@@ -49,7 +50,7 @@ public class FinaleManager : MonoBehaviour
         MusicManager.Instance.PlaySong(monsterKillSong, 0.5f);
         cameraAnim.Play("CameraAnimation");
 
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(15f);
 
         StartCoroutine(screenFade.FadeIn(1f, 0f)); 
         MusicManager.Instance.StopSong(monsterKillSong);
@@ -65,6 +66,7 @@ public class FinaleManager : MonoBehaviour
     }
     public IEnumerator FinalAnimation()
     {
+        pFM.soundsDisabled = true;
         player.PlayFinalAnim();
         yield return null;
     }

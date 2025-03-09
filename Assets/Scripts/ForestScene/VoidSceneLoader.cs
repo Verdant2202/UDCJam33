@@ -20,7 +20,7 @@ public class VoidSceneLoader : MonoBehaviour
     }
     IEnumerator Loadscene()
     {
-        yield return new WaitForSeconds(0.15f);
+        yield return new WaitForSeconds(2f);
         Loader.Load(Loader.Scene.VoidScene);
     }
     private void OnTriggerEnter(Collider collision)

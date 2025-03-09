@@ -97,7 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 000402981d957db4b886febb03ca1844,
+    type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 9cb56e5d1c7150240a5e327f29328d6b,
     type: 2}
 --- !u!196 &4
@@ -3171,8 +3172,6 @@ MonoBehaviour:
   globalSFXVolume: 1
   sfxList:
   - sfxData: {fileID: 11400000, guid: fa1df5f5757d99d4783739a83289f1fa, type: 2}
-    source: {fileID: 0}
-  - sfxData: {fileID: 11400000, guid: c7aede2659571a147a8324cfb08924e7, type: 2}
     source: {fileID: 0}
   - sfxData: {fileID: 11400000, guid: 34e95bbebf3d6364289a7c1005c55356, type: 2}
     source: {fileID: 0}

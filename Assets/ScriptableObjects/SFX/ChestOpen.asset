@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: ChestOpen
   m_EditorClassIdentifier: 
   sfxName: 
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 81c7b1c4a536e074baa742184829d36f, type: 3}
   naturalVolume: 1
   isLooped: 0

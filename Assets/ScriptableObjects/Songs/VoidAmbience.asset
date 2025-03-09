@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: VoidAmbience
   m_EditorClassIdentifier: 
   songName: VoidAmbience
-  clip: {fileID: 8300000, guid: eca24166b0066dd4caaa343368b068c9, type: 3}
-  naturalVolume: 0.558
+  clip: {fileID: 8300000, guid: f55a0c1181ff37f4f9ef53fa7916dd28, type: 3}
+  naturalVolume: 0.475

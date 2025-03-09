@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Jumpscare
   m_EditorClassIdentifier: 
   sfxName: 
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 2a8d797fccbd20a48853654f767a8004, type: 3}
   naturalVolume: 1
   isLooped: 0

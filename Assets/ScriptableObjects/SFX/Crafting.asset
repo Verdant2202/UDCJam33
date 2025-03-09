@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Crafting
   m_EditorClassIdentifier: 
   sfxName: 
-  clip: {fileID: 0}
-  naturalVolume: 1
+  clip: {fileID: 8300000, guid: 76c1080f1670b614a93406ac8a097163, type: 3}
+  naturalVolume: 0.419
   isLooped: 0

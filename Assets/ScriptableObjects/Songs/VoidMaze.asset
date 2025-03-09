@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: VoidMaze
   m_EditorClassIdentifier: 
   songName: VoidMaze
-  clip: {fileID: 8300000, guid: eca24166b0066dd4caaa343368b068c9, type: 3}
+  clip: {fileID: 8300000, guid: 1459e2e8a0284934d843574a13b4cc3a, type: 3}
   naturalVolume: 0.558

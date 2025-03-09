@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: BedroomWakeUp
   m_EditorClassIdentifier: 
   sfxName: 
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 97787014890042949bb0db95e57eeb83, type: 3}
   naturalVolume: 1
   isLooped: 0

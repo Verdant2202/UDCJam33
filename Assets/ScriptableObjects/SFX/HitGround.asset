@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: HitGround
   m_EditorClassIdentifier: 
   sfxName: 
-  clip: {fileID: 0}
-  naturalVolume: 1
+  clip: {fileID: 8300000, guid: 06633d496bf3fe144991d79e4f574be4, type: 3}
+  naturalVolume: 0.461
   isLooped: 0

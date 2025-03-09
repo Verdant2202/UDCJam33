@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: VoidKilledMonster
   m_EditorClassIdentifier: 
   songName: MonsterDead
-  clip: {fileID: 8300000, guid: eca24166b0066dd4caaa343368b068c9, type: 3}
+  clip: {fileID: 8300000, guid: 04336a8968d651547a410f16b40610a4, type: 3}
   naturalVolume: 0.558

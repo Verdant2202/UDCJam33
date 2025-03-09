@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: MonsterDie
   m_EditorClassIdentifier: 
   sfxName: 
-  clip: {fileID: 0}
-  naturalVolume: 1
+  clip: {fileID: 8300000, guid: 7d6789852da633340bb1ae5466c239be, type: 3}
+  naturalVolume: 0.256
   isLooped: 0

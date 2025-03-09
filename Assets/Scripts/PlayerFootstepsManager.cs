@@ -10,10 +10,13 @@ public class PlayerFootstepsManager : MonoBehaviour
     [SerializeField] SFXSO sprintSound;
     [SerializeField] AudioSource walkAudioSource;
     [SerializeField] AudioSource sprintAudioSource;
+    [SerializeField] ForestPlayer fP;
 
+    public bool soundsDisabled;
     // Start is called before the first frame update
     void Start()
     {
+        soundsDisabled = false;
         walkAudioSource.clip = walkSound.clip;
         sprintAudioSource.clip = sprintSound.clip;
     }
@@ -39,10 +42,18 @@ public class PlayerFootstepsManager : MonoBehaviour
             sprintAudioSource.enabled = false;
         }
 
-        if (Time.timeScale == 0f || !movement.isGrounded)
+        if (Time.timeScale == 0f || !movement.isGrounded || soundsDisabled)
         {
             walkAudioSource.enabled = false;
             sprintAudioSource.enabled = false;
+        }
+        if (fP != null)
+        {
+            if(fP.frozen)
+            {
+                walkAudioSource.enabled = false;
+                sprintAudioSource.enabled = false;
+            }
         }
     }
 }

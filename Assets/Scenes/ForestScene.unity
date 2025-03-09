@@ -152,8 +152,8 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 1, g: 0.9323408, b: 0.759434, a: 1}
+  m_Intensity: 0.3
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -4506,7 +4506,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 2090819206}
   pauseMenuGameObject: {fileID: 2138738352}
-  footstepsManager: {fileID: 1887101075}
 --- !u!1 &885377015 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4920764858631379228, guid: 1c56836488135234eb5e0ba36ad23766,
@@ -11479,6 +11478,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5795972250391598933, guid: d55777a6ef97dc7488fe00283c40da86,
+        type: 3}
+      propertyPath: fP
+      value: 
+      objectReference: {fileID: 2090819206}
     - target: {fileID: 8592712043257831007, guid: d55777a6ef97dc7488fe00283c40da86,
         type: 3}
       propertyPath: m_IsActive
@@ -11487,18 +11491,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 5930137839296245688, guid: d55777a6ef97dc7488fe00283c40da86, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d55777a6ef97dc7488fe00283c40da86, type: 3}
---- !u!114 &1887101075 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5795972250391598933, guid: d55777a6ef97dc7488fe00283c40da86,
-    type: 3}
-  m_PrefabInstance: {fileID: 1887101074}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 714672378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14eb54b130b39074dbf564e15476cc51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1887101076 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 899438147792732492, guid: d55777a6ef97dc7488fe00283c40da86,
@@ -12523,6 +12515,7 @@ MonoBehaviour:
   anim: {fileID: 2090819207}
   forestAmbience: {fileID: 11400000, guid: 824c4d2c244d3cf4688d02bc0fd3caa6, type: 2}
   forestChase: {fileID: 11400000, guid: 00affcad991bf4e44bb271616fc308cc, type: 2}
+  frozen: 0
 --- !u!95 &2090819207
 Animator:
   serializedVersion: 5
