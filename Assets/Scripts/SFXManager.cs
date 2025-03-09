@@ -45,6 +45,13 @@ public class SFXManager : MonoBehaviour
         }
     }
 
+    public void StopAllSFX()
+    {
+        foreach(SFX sfx in sfxList)
+        {
+            StopSFX(sfx.sfxData, 0f);
+        }
+    }
     public void PlaySFX(SFXSO sfxData, float fadeInTime = 0f)
     {
         SFX sfx = sfxList.Find(s => s.sfxData == sfxData);

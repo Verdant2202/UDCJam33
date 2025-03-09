@@ -153,6 +153,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f543bc42fbdef874594910cdf7101f8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitGroundSFX: {fileID: 11400000, guid: 8d077e191af42cd46b2aea75eed79f51, type: 2}
+  fallingSFX: {fileID: 11400000, guid: 8b67630b92488e3498c63aa13d5e135b, type: 2}
 --- !u!4 &8785642935485730013 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1787029126670724638, guid: eaa65d7de6700604fad670f7f52a9296,

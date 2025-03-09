@@ -4820,11 +4820,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ReferenceResolution: {x: 1030, y: 600}
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -5059,6 +5059,8 @@ MonoBehaviour:
   forestJumpscare: {fileID: 11400000, guid: 13c0cfa80b5eaf44ab9886289ce508f1, type: 2}
   Jumpscare: {fileID: 0}
   ChestOpen: {fileID: 0}
+  walkSource: {fileID: 0}
+  runSource: {fileID: 0}
 --- !u!1001 &988815438
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6173,7 +6175,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.38333333
+  m_VoxelSize: 0.29999998
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: d79e82d5fbd2bbc4ea046c0ba453ccea, type: 2}
   m_BuildHeightMesh: 0
@@ -6612,6 +6614,16 @@ PrefabInstance:
     - target: {fileID: 4920764858631379231, guid: 1c56836488135234eb5e0ba36ad23766,
         type: 3}
       propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923838050296299774, guid: 1c56836488135234eb5e0ba36ad23766,
+        type: 3}
+      propertyPath: MinDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923838050296299774, guid: 1c56836488135234eb5e0ba36ad23766,
+        type: 3}
+      propertyPath: rolloffMode
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8369097025404413760, guid: 1c56836488135234eb5e0ba36ad23766,
@@ -8753,6 +8765,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1323758811}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &1323758813 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6923838050296299774, guid: 1c56836488135234eb5e0ba36ad23766,
+    type: 3}
+  m_PrefabInstance: {fileID: 1323758811}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1323758814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8825,21 +8843,8 @@ MonoBehaviour:
   nav: {fileID: 1323758814}
   forestAmbience: {fileID: 11400000, guid: 824c4d2c244d3cf4688d02bc0fd3caa6, type: 2}
   forestChase: {fileID: 11400000, guid: 00affcad991bf4e44bb271616fc308cc, type: 2}
---- !u!114 &1323758818
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 885377015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd161354ca1260548ae4685c7441197b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  forestJumpscare: {fileID: 0}
-  Jumpscare: {fileID: 0}
-  ChestOpen: {fileID: 0}
+  footsteps: {fileID: 1323758813}
+  footstepsSO: {fileID: 11400000, guid: e8e0c4a45f6d89a4d84620844c819d44, type: 2}
 --- !u!1001 &1344584325
 PrefabInstance:
   m_ObjectHideFlags: 0

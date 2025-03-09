@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   songName: VoidDropper
   clip: {fileID: 8300000, guid: 554c5e8e7b8a5bf40aed9da057eb60f5, type: 3}
-  naturalVolume: 0.862
+  naturalVolume: 0.986

@@ -13,6 +13,9 @@ public class ForestMonster : MonoBehaviour
     [SerializeField] MonsterForestNavmeshscript nav;
     [SerializeField] SongSO forestAmbience;
     [SerializeField] SongSO forestChase;
+
+    [SerializeField] AudioSource footsteps;
+    [SerializeField] SFXSO footstepsSO;
     public IEnumerator Jumpscare()
     {
         transform.LookAt(playerTransform);
@@ -28,7 +31,7 @@ public class ForestMonster : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        footsteps.clip = footstepsSO.clip;
     }
 
     // Update is called once per frame

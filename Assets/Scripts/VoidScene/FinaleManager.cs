@@ -19,6 +19,7 @@ public class FinaleManager : MonoBehaviour
     [SerializeField] SongSO monsterKillSong;
 
     [SerializeField] SFXSO monsterDeath;
+    [SerializeField] SFXSO jumpSFX;
     [SerializeField] PlayerFootstepsManager pFM;
     public void EnableFinale()
     {  
@@ -53,8 +54,8 @@ public class FinaleManager : MonoBehaviour
         yield return new WaitForSeconds(15f);
 
         StartCoroutine(screenFade.FadeIn(1f, 0f)); 
-        MusicManager.Instance.StopSong(monsterKillSong);
-        yield return new WaitForSeconds(1f);
+        MusicManager.Instance.StopSong(monsterKillSong, 2f);
+        yield return new WaitForSeconds(4f);
         Loader.Load(Loader.Scene.BedroomScene);
         yield return null;
     }
@@ -68,6 +69,8 @@ public class FinaleManager : MonoBehaviour
     {
         pFM.soundsDisabled = true;
         player.PlayFinalAnim();
+        yield return new WaitForSeconds(0.1f);
+        SFXManager.Instance.PlaySFX(jumpSFX);
         yield return null;
     }
     // Update is called once per frame

@@ -11,6 +11,7 @@ public class HouseDoor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        InGameData.doorOpen = true;
         if(InGameData.doorOpen)
         {
             interactive.EnableInteractive(false);

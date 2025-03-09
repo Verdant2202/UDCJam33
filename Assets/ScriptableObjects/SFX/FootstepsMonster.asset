@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: FootstepsMonster
   m_EditorClassIdentifier: 
   sfxName: 
-  clip: {fileID: 8300000, guid: 148578cc5021fdd49a39ef6d60a7cc44, type: 3}
-  naturalVolume: 0
+  clip: {fileID: 8300000, guid: 320d24f680b91d344a99634cfe3441c9, type: 3}
+  naturalVolume: 1
   isLooped: 0

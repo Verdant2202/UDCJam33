@@ -32,6 +32,8 @@ public class ButtonsHander : MonoBehaviour
 
     private void Start()
     {
+        UnityEngine.Cursor.visible = true;
+        UnityEngine.Cursor.lockState = CursorLockMode.None;
         MusicManager.Instance.PlaySong(mainMenuSong, 0f);
     }
 

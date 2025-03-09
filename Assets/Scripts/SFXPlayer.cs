@@ -8,6 +8,17 @@ public class SFXPlayer : MonoBehaviour
     [SerializeField] SFXSO Jumpscare;
     [SerializeField] SFXSO ChestOpen;
 
+    [SerializeField] AudioSource walkSource;
+    [SerializeField] AudioSource runSource;
+    public void PlayWalkSound()
+    {
+        walkSource.Play();
+    }
+
+    public void PlayRunSound()
+    {
+        runSource.Play();
+    }
     public void PlayForestJumpscare()
     {
         SFXManager.Instance.PlaySFX(forestJumpscare);
