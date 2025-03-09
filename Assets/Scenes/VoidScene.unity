@@ -11584,7 +11584,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1068494631
 Transform:
   m_ObjectHideFlags: 0
@@ -13113,7 +13113,6 @@ MonoBehaviour:
   playerDropperLightRange: 85
   lightChangeLerpDuration: 0.3
   playerDropperMoveSpeed: 12
-  player: {fileID: 45600755}
   dropperSong: {fileID: 11400000, guid: b7e3c082ae2925848a75aef5c25236a4, type: 2}
   ambienceSong: {fileID: 11400000, guid: f69da2a7c19de5749a528eb37bb560f4, type: 2}
   fallingSFX: {fileID: 11400000, guid: 8b67630b92488e3498c63aa13d5e135b, type: 2}
